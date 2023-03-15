@@ -2,9 +2,7 @@ html,body {margin-left: 0vw;
     margin-right: 0vw;
     margin-top: 0vh;
     margin-bottom: 0vh;
-     
-      
-    background-color: #ECE9E6;
+  background-color: #ECE9E6;
 }
 
 * {margin-left: 0vw;
@@ -12,11 +10,14 @@ html,body {margin-left: 0vw;
     margin-top: 0vh;
     margin-bottom: 0vh;
   background-color: #ECE9E6;
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden;
 }
-
-
+h1 {
+    margin-left: 0vw;
+    margin-right: 0vw;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+  background-color: #ECE9E6;
+}
 header{
     margin-left: 0vw;
     margin-right: 0vw;
@@ -24,3 +25,13 @@ header{
     margin-bottom: 0vh;
   background-color: #ECE9E6;
 }
+
+.triunghi{
+   height: 1570.48px;
+  width:787.46px;
+  background-color: #1C1C1C;
+  opacity: 11%;
+  rotate: 127deg;
+  overflow: hidden;
+  left:0;
+} 
