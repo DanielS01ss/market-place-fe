@@ -10,6 +10,5 @@ export class AppComponent {
   add(){
     let num = 20;
   }
-  
 }
 
