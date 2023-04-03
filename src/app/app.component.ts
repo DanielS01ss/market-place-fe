@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +9,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'market-place-fe';
-  add(){
-    let num = 20;
+  
+  constructor (
+    private matIconRegistry: MatIconRegistry,
+    private sanitizer: DomSanitizer
+  ) {
+    //aici se adauga icon-urile ca de ex:
+    //this.matIconRegistry.addSvgIcon(
+      //'nume',
+      //this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/svg_icons/nume.svg')
+    //)
   }
+  // add(){
+  //   let num = 20;
+  // }
   
 }
 

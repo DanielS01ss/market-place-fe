@@ -1,0 +1,32 @@
+body {
+  overflow: hidden;
+  background-color: #ECE9E6;
+}
+
+.logo-container {
+    position: absolute;
+    top: 153.88px;
+    left: 628.89px;
+  }
+  
+  .Agora_logo_light {
+    width: 152.11px;
+    height: 175.62px;
+    object-fit: contain;
+    fill: #1C1C1C;
+  }
+
+/* .shadow-container {
+    top: 129.88px;
+    left: -671.73px;
+    overflow: hidden;
+}
+
+.shadow1 {
+    width: 787.46px;
+    height: 1577.48px;
+    object-fit: contain;
+    overflow: hidden;
+} */
+
+  
