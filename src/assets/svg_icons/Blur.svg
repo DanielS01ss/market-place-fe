@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1798.732" height="950.12" viewBox="0 0 1798.732 950.12">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1798.732" height="950.12" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect width="1733.732" height="1578.24" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Repeat_Grid_2" data-name="Repeat Grid 2" clip-path="url(#clip-path)">
+    <g transform="translate(736.732 -129.88)">
+      <g id="Blur" transform="translate(1062 1079.229) rotate(127)" fill="#1c1c1c" stroke="#1c1c1c" stroke-width="1" opacity="0.12">
+        <rect width="787.456" height="1577.477" stroke="none"/>
+        <rect x="0.5" y="0.5" width="786.456" height="1576.477" fill="none"/>
+      </g>
+      <g id="Blur-2" data-name="Blur" transform="translate(1045 1135.229) rotate(127)" fill="#1c1c1c" opacity="0.12">
+        <path d="M 786.9556274414062 1576.977172851562 L 0.5000442266464233 1576.977172851562 L 0.5000442266464233 0.4999864399433136 L 786.9556274414062 0.4999864399433136 L 786.9556274414062 1576.977172851562 Z" stroke="none"/>
+        <path d="M 1.00006103515625 1 L 1.00006103515625 1576.477172851562 L 786.4556274414062 1576.477172851562 L 786.4556274414062 1 L 1.00006103515625 1 M 6.103515625e-05 0 L 787.4556274414062 0 L 787.4556274414062 1577.477172851562 L 6.103515625e-05 1577.477172851562 L 6.103515625e-05 0 Z" stroke="none" fill="#1c1c1c"/>
+      </g>
+      <g id="Repeat_Grid_1" data-name="Repeat Grid 1" transform="translate(-736.732 214)" clip-path="url(#clip-path-2)">
+        <g transform="translate(736.732 -214)">
+          <g id="Blur-3" data-name="Blur" transform="translate(997 1163.349) rotate(127)" fill="#1c1c1c" opacity="0.12">
+            <path d="M 786.9556274414062 1576.977172851562 L 0.5000442266464233 1576.977172851562 L 0.5000442266464233 0.4999864399433136 L 786.9556274414062 0.4999864399433136 L 786.9556274414062 1576.977172851562 Z" stroke="none"/>
+            <path d="M 1.00006103515625 1 L 1.00006103515625 1576.477172851562 L 786.4556274414062 1576.477172851562 L 786.4556274414062 1 L 1.00006103515625 1 M 6.103515625e-05 0 L 787.4556274414062 0 L 787.4556274414062 1577.477172851562 L 6.103515625e-05 1577.477172851562 L 6.103515625e-05 0 Z" stroke="none" fill="#1c1c1c"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
