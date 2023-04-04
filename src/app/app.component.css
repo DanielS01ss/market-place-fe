@@ -6,107 +6,103 @@ body {
 }
 
 .logo-container {
-    position: absolute;
-    top: 153.88px;
-    left: 628.89px;
-  }
-  
-  .Agora_logo_light {
-    width: 152.11px;
-    height: 175.62px;
-    object-fit: contain;
-    fill: #1C1C1C;
-  }
+  position: absolute;
+  top: 153.88px;
+  left: 628.89px;
+}
+
+.Agora_logo_light {
+  width: 152.11px;
+  height: 175.62px;
+  object-fit: contain;
+  fill: #1C1C1C;
+}
 
 .blur-container {
-    position: relative;
-    top: 129.88px;
-    left: -736.73px;
-    overflow: hidden;
+  position: relative;
+  top: 129.88px;
+  left: -736.73px;
+  overflow: hidden;
 }
 
 .blur {
-    width: 1798.73px;
-    height: 1662.36px;
-    object-fit: contain;
-    overflow: hidden;
+  width: 1798.73px;
+  height: 1662.36px;
+  object-fit: contain;
+  overflow: hidden;
 }
 
 .writing-container {
-    position: absolute;
-    top: 229px;
-    left: 790px;
+  position: absolute;
+  top: 229px;
+  left: 790px;
 }
 
 .writing {
-    width: 742px;
-    height: 210px;
-    object-fit: contain;
+  width: 742px;
+  height: 210px;
+  object-fit: contain;
 }
 
 .signup-btn {
-    position: absolute;
-    height: 61px;
-    width: 198px;
-    top: 0;
-    margin-top: 31px;
-    margin-right: 338.1px;
-    right: 0;
-    cursor: pointer;
-    border: 1px solid #000000;
-    border-radius: 18px;
-    color: #fff;
-    background-color: #000;
-    font-size: 25px;
-    font-weight: 700;
-    font-family: SegoeUI-Bold, Segoe UI;
-  }
-  
-  
-  .signup-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
-  }
-  
-  .login-btn {
-    position: absolute;
-    height: 61px;
-    width: 198px;
-    top: 0;
-    margin-top: 31px;
-    margin-right: 115.1px;
-    right: 0;
-    cursor: pointer;
-    border: 1px solid #000000;
-    border-radius: 18px;
-    color: #fff;
-    background-color: #000;
-    font-size: 25px;
-    font-weight: 700;
-    font-family: SegoeUI-Bold, Segoe UI;
-  }
-  
-  
-  .login-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
-  }
-  
-  .darkmode-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 38px;
-    left: 1790px;
-    
-  }
+  position: absolute;
+  height: 61px;
+  width: 198px;
+  top: 0;
+  margin-top: 31px;
+  margin-right: 338.1px;
+  right: 0;
+  cursor: pointer;
+  border: 1px solid #000000;
+  border-radius: 18px;
+  color: #fff;
+  background-color: #000;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: SegoeUI-Bold, Segoe UI;
+}
 
-  .darkmode{
-    width: 50px;
-    height: 50px;
-  }
 
-  .buttons-container{
-    display: flex;
-  }
+.signup-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.login-btn {
+  position: absolute;
+  height: 61px;
+  width: 198px;
+  top: 0;
+  margin-top: 31px;
+  margin-right: 115.1px;
+  right: 0;
+  cursor: pointer;
+  border: 1px solid #000000;
+  border-radius: 18px;
+  color: #fff;
+  background-color: #000;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: SegoeUI-Bold, Segoe UI;
+}
+
+
+.login-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.darkmode-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 38px;
+  left: 1790px;
+
+}
+
+.darkmode {
+  width: 50px;
+  height: 50px;
+}
