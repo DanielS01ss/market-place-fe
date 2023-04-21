@@ -1,4 +1,80 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+    height: 100%;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #ECE9E6;
+    --text-color: #000000;
+    --button-color: #000000;
+    --button-writting-color: #ffffff;
+}
+
+.Agora_logo_light {
+    -webkit-filter: invert(0%);
+}
+
+.writing {
+    -webkit-filter: invert(0%);
+}
+
+.darkmode-container {
+    display: none;
+    position: absolute;
+    top: 38px;
+    right: 38px;
+}
+
+.lightmode-container {
+    display: none;
+    position: absolute;
+    top: 38px;
+    right: 38px;
+}
+
+[data-theme="dark"] {
+    --bg-color: #2A2A2A;
+    --text-color: #ffffff;
+    --button-color: #C8C8C8;
+    --button-writting-color: #000000;
+}
+
+[data-theme="dark"] .blurs {
+    opacity: 150%;
+}
+
+[data-theme="dark"] .Agora_logo_light {
+    -webkit-filter: invert(100%);
+}
+
+[data-theme="dark"] .writing {
+    -webkit-filter: invert(100%);
+}
+
+[data-theme="dark"] .darkmode-container {
+    display: none;
+    position: absolute;
+    top: 38px;
+    right: 38px;
+    z-index: -10;
+}
+
+[data-theme="dark"] .lightmode-container {
+    display: flex;
+    position: absolute;
+    top: 38px;
+    right: 38px;
+}

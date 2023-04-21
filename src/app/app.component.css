@@ -1,7 +1,7 @@
 @media (min-width: 800px) and (max-width: 1920px) {
   body {
     overflow: hidden;
-    background-color: #ECE9E6;
+    background-color: var(--bg-color);
     background-repeat: repeat;
     background-size: 100vw 100vh;
   }
@@ -16,7 +16,20 @@
     width: 152.11px;
     height: 175.62px;
     object-fit: contain;
-    fill: #1C1C1C;
+  }
+
+  .writing-container {
+    position: absolute;
+    display: block;
+    top: 229px;
+    left: 790px;
+    right: auto;
+  }
+
+  .writing {
+    width: 742px;
+    height: 210px;
+    object-fit: contain;
   }
 
   .blurs-container {
@@ -33,18 +46,6 @@
     overflow: hidden;
   }
 
-  .writing-container {
-    position: absolute;
-    top: 229px;
-    left: 790px;
-  }
-
-  .writing {
-    width: 742px;
-    height: 210px;
-    object-fit: contain;
-  }
-
   .signup-btn {
     position: absolute;
     height: 61px;
@@ -54,10 +55,10 @@
     margin-right: 338.1px;
     right: 0;
     cursor: pointer;
-    border: 1px solid #000000;
+    border: 1px var(--button-color) solid;
     border-radius: 18px;
-    color: #fff;
-    background-color: #000;
+    color: var(--button-writting-color);
+    background-color: var(--button-color);
     font-size: 25px;
     font-weight: 700;
     font-family: 'UT-Sans-TFF', sans-serif;
@@ -65,8 +66,8 @@
 
 
   .signup-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--button-writting-color);
+    color: var(--button-color);
   }
 
   .login-btn {
@@ -78,47 +79,70 @@
     margin-right: 115.1px;
     right: 0;
     cursor: pointer;
-    border: 1px solid #000000;
+    border: 1px solid var(--button-color);
     border-radius: 18px;
-    color: #fff;
-    background-color: #000;
+    color: var(--button-writting-color);
+    background-color: var(--button-color);
     font-size: 25px;
     font-weight: 700;
     font-family: 'UT-Sans-TFF', sans-serif;
   }
 
-
   .login-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--button-writting-color);
+    color: var(--button-color);
   }
 
   .darkmode-container {
     display: flex;
-    position: fixed;
+    position: absolute;
     top: 38px;
-    left: 1790px;
-
+    right: 35px;
+    cursor: pointer;
+    border: 0px;
+    background-color: inherit;
+    border-radius: 50px;
   }
 
   .darkmode {
     width: 50px;
     height: 50px;
   }
-  .IPad-Site-name{
+
+  .lightmode-container {
+    display: hidden;
+    position: absolute;
+    top: 38px;
+    right: 35px;
+    cursor: pointer;
+    border: 0px;
+    background-color: inherit;
+    border-radius: 50px;
+  }
+
+  .lightmode {
+    width: 50px;
+    height: 50px;
+    background: var(--bg-color);
+  }
+
+  .IPad-Site-name {
     display: none;
   }
-  .IPad-Motto{
+
+  .IPad-Motto {
     display: none;
   }
-  .IPad-Choice{
+
+  .IPad-Choice {
     display: none;
   }
 }
+
 @media (max-width: 800px) {
   body {
     overflow: hidden;
-    background-color: #ECE9E6;
+    background-color: var(--bg-color);
     background-repeat: repeat;
     background-size: 100vw 100vh;
   }
@@ -133,7 +157,7 @@
     width: 152.11px;
     height: 175.62px;
     object-fit: contain;
-    fill: #1C1C1C;
+    fill: var(--text-color);
   }
 
   .blurs-container {
@@ -170,10 +194,10 @@
     top: 576.37px;
     left: 206px;
     cursor: pointer;
-    border: 1px solid #000000;
+    border: 1px solid var(--text-color);
     border-radius: 18px;
-    color: #fff;
-    background-color: #000;
+    color: var(--bg-color);
+    background-color: var(--text-color);
     font-size: 25px;
     font-weight: 700;
     font-family: 'UT-Sans-TFF', sans-serif;
@@ -181,8 +205,8 @@
 
 
   .signup-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--bg-color);
+    color: var(--text-color);
   }
 
   .login-btn {
@@ -192,10 +216,10 @@
     top: 673.37px;
     left: 206px;
     cursor: pointer;
-    border: 1px solid #000000;
+    border: 1px solid var(--text-color);
     border-radius: 18px;
-    color: #fff;
-    background-color: #000;
+    color: var(--bg-color);
+    background-color: var(--text-color);
     font-size: 25px;
     font-weight: 700;
     font-family: 'UT-Sans-TFF', sans-serif;
@@ -203,8 +227,8 @@
 
 
   .login-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--bg-color);
+    color: var(--button-color);
   }
 
   .darkmode-container {
@@ -213,8 +237,11 @@
     align-items: center;
     position: absolute;
     top: 800.37px;
-    left: 370px;
-
+    border: 0px;
+    border-radius: 50px;
+    right: 360px;
+    background-color: rgba(28, 28, 28, 0%);
+    cursor: pointer;
   }
 
   .darkmode {
@@ -222,43 +249,64 @@
     height: 55.83px;
   }
 
-  .IPad-Site-name{
+  .lightmode-container {
+    display: hidden;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 800.37px;
+    border: 0px;
+    border-radius: 50px;
+    right: 360px;
+    background-color: rgba(28, 28, 28, 0%);
+    cursor: pointer;
+  }
+
+  .lightmode {
+    width: 58px;
+    height: 55.83px;
+  }
+
+  .IPad-Site-name {
     position: absolute;
     display: flex;
     top: 300px;
     left: 250px;
     font-size: 43px;
-    font-family:'UT-Sans-TFF', sans-serif;
+    font-family: 'UT-Sans-TFF', sans-serif;
     align-items: center;
     font-weight: bold;
-    color: #000000;
+    color: var(--text-color);
 
   }
-  .IPad-Motto{
+
+  .IPad-Motto {
     position: absolute;
     display: flex;
     top: 365px;
     left: 248.5px;
     font-size: 25px;
-    font-family:'UT-Sans-TFF', sans-serif;
-    color: #000000;
+    font-family: 'UT-Sans-TFF', sans-serif;
+    color: var(--text-color);
     align-items: center;
   }
-  .IPad-Choice{
+
+  .IPad-Choice {
     position: absolute;
     display: flex;
     top: 469px;
     left: 147px;
     font-size: 32px;
-    font-family:'UT-Sans-TFF', sans-serif;
-    color: #000000;
+    font-family: 'UT-Sans-TFF', sans-serif;
+    color: var(--text-color);
     align-items: center;
   }
 }
+
 @media (max-width: 400px) {
   body {
     overflow: hidden;
-    background-color: #ECE9E6;
+    background-color: var(--bg-color);
     background-repeat: repeat;
     background-size: 100vw 100vh;
   }
@@ -273,7 +321,7 @@
     width: 75%;
     height: 200px;
     object-fit: contain;
-    fill: #1C1C1C;
+    fill: var(--text-color);
   }
 
   .blurs-container {
@@ -310,10 +358,10 @@
     top: 562.03px;
     left: 92px;
     cursor: pointer;
-    border: 1px solid #000000;
+    border: 1px solid var(--text-color);
     border-radius: 18px;
-    color: #fff;
-    background-color: #000;
+    color: var(--bg-color);
+    background-color: var(--text-color);
     font-size: 25px;
     font-weight: 700;
     font-family: 'UT-Sans-TFF', sans-serif;
@@ -321,8 +369,8 @@
 
 
   .signup-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--bg-color);
+    color: var(--text-color);
   }
 
   .login-btn {
@@ -332,10 +380,10 @@
     top: 625.47px;
     left: 92px;
     cursor: pointer;
-    border: 1px solid #000000;
+    border: 1px solid var(--text-color);
     border-radius: 18px;
-    color: #fff;
-    background-color: #000;
+    color: var(--bg-color);
+    background-color: var(--text-color);
     font-size: 25px;
     font-weight: 700;
     font-family: 'UT-Sans-TFF', sans-serif;
@@ -343,8 +391,8 @@
 
 
   .login-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--bg-color);
+    color: var(--button-color);
   }
 
   .darkmode-container {
@@ -353,45 +401,57 @@
     align-items: center;
     position: absolute;
     top: 15.03px;
-    left: 290.84px;
-
+    right: 10px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: rgba(28, 28, 28, 0%);
+    scale: 0.9;
   }
 
-  .darkmode {
-    width: 75%;
-    height: auto;
+  .lightmode-container {
+    display: hidden;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 15.03px;
+    border: 0px;
+    border-radius: 10px;
+    right: 10px;
+    background-color: rgba(28, 28, 28, 0%);
   }
 
-  .IPad-Site-name{
+  .IPad-Site-name {
     position: absolute;
     display: flex;
     top: 250px;
     left: 100px;
     font-size: 30px;
-    font-family:'UT-Sans-TFF', sans-serif;
+    font-family: 'UT-Sans-TFF', sans-serif;
     align-items: center;
     font-weight: bold;
-    color: #000000;
+    color: var(--text-color);
 
   }
-  .IPad-Motto{
+
+  .IPad-Motto {
     position: absolute;
     display: flex;
     top: 290.1px;
     left: 113.5px;
     font-size: 15px;
-    font-family:'UT-Sans-TFF', sans-serif;
-    color: #000000;
+    font-family: 'UT-Sans-TFF', sans-serif;
+    color: var(--text-color);
     align-items: center;
   }
-  .IPad-Choice{
+
+  .IPad-Choice {
     position: absolute;
     display: flex;
     top: 517.5px;
     left: 30px;
     font-size: 20px;
-    font-family:'UT-Sans-TFF', sans-serif;
-    color: #000000;
+    font-family: 'UT-Sans-TFF', sans-serif;
+    color: var(--text-color);
     align-items: center;
   }
 }

@@ -1,6 +1,4 @@
 import { Component, HostBinding } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -11,30 +9,20 @@ export class AppComponent {
 
   title = 'market-place-fe';
 
-  isDarkMode: boolean = false;
-
-  @HostBinding('class.dark-theme')
-  get darkTheme() {
-    return this.isDarkMode;
+  darkMode = false;
+  constructor(){
+    this.detectColorScheme();
   }
 
-  toggleThemeMode() {
-    this.isDarkMode = !this.isDarkMode;
-  }
-
-  constructor (
-    private matIconRegistry: MatIconRegistry,
-    private sanitizer: DomSanitizer
-  ) {
-    //aici se adauga icon-urile ca de ex:
-    //this.matIconRegistry.addSvgIcon(
-      //'nume',
-      //this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/svg_icons/nume.svg')
-    //)
-  }
-  // add(){
-  //   let num = 20;
-  // }
-  
+  detectColorScheme() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      this.darkMode = true;
+      document.documentElement.setAttribute('data-theme', 'this.darkMode ? "dark" : "light"');
+    }
 }
 
+toggleTheme(){
+  this.darkMode = !this.darkMode;
+  document.documentElement.setAttribute('data-theme', this.darkMode ? 'dark' : 'light');
+}
+}
