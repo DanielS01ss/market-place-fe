@@ -6,115 +6,122 @@
     background-size: 100vw 100vh;
   }
 
-  .logo-container {
-    position: absolute;
-    top: 153.88px;
-    left: 628.89px;
-  }
-
-  .Agora_logo_light {
-    width: 152.11px;
-    height: 175.62px;
-    object-fit: contain;
-    fill: #1C1C1C;
-  }
-
-  .blurs-container {
+  .Blur_U-container {
     position: fixed;
-    top: 129.88px;
-    left: -736.73px;
+    top: 113px;
+    right: -200px;
     overflow: hidden;
   }
 
-  .blurs {
-    width: 1798.73px;
-    height: 1662.36px;
+  .Blur_U {
+    width: 1200px;
+    height: 1577.48px;
     object-fit: contain;
     overflow: hidden;
   }
 
-  .writing-container {
-    position: absolute;
-    top: 229px;
-    left: 790px;
-  }
-
-  .writing {
-    width: 742px;
-    height: 210px;
-    object-fit: contain;
-  }
-
-  .signup-btn {
-    position: absolute;
-    height: 61px;
-    width: 198px;
-    top: 0;
-    margin-top: 31px;
-    margin-right: 338.1px;
-    right: 0;
-    cursor: pointer;
-    border: 1px solid #000000;
-    border-radius: 18px;
-    color: #fff;
-    background-color: #000;
-    font-size: 25px;
-    font-weight: 700;
-    font-family: 'UT-Sans-TFF', sans-serif;
-  }
-
-
-  .signup-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
-  }
-
-  .login-btn {
-    position: absolute;
-    height: 61px;
-    width: 198px;
-    top: 0;
-    margin-top: 31px;
-    margin-right: 115.1px;
-    right: 0;
-    cursor: pointer;
-    border: 1px solid #000000;
-    border-radius: 18px;
-    color: #fff;
-    background-color: #000;
-    font-size: 25px;
-    font-weight: 700;
-    font-family: 'UT-Sans-TFF', sans-serif;
-  }
-
-
-  .login-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
-  }
-
-  .darkmode-container {
+  .csv_icon-container {
     display: flex;
     position: fixed;
-    top: 38px;
-    left: 1790px;
+    top: 370px;
+    left: 356px;
 
   }
 
-  .darkmode {
-    width: 50px;
-    height: 50px;
+  .csv_icon {
+    width: 91px;
+    height: 91px;
   }
-  .IPad-Site-name{
-    display: none;
+
+  .json_icon-container {
+    display: flex;
+    position: fixed;
+    top: 370px;
+    left: 464px;
+
   }
-  .IPad-Motto{
-    display: none;
+
+  .json_icon {
+    width: 91px;
+    height: 91px;
   }
-  .IPad-Choice{
+
+  .xml_icon-container {
+    display: flex;
+    position: fixed;
+    top: 368px;
+    left: 572px;
+
+  }
+
+  .xml_icon {
+    width: 95px;
+    height: 95px;
+  }
+
+  .uplaod_data_btn {
+    position: absolute;
+    height: 111px;
+    width: 496px;
+    top: 0;
+    top: 77px;
+    left: 308px;
+    right: 0;
+    cursor: pointer;
+    border: 1.5px solid #000000;
+    border-radius: 50px;
+    color: #000000;
+    background-color: #D2CFCC;
+    font-size: 45px;
+    font-weight: 700;
+    font-family: 'UT-Sans-TFF', sans-serif;
+    padding-left: 60px;
+  }
+
+  .uplaod_data_btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .upload_icon-container {
+    display: flex;
+    position: fixed;
+    top: 90px;
+    left: 345px;
+    z-index: 50;
+    border-radius: 50px;
+  }
+
+  .upload_icon {
+    width: 86px;
+    height: 86px;
+  }
+
+  .message1{
+    position: absolute;
+    top: 270px;
+    left: 321px;
+    font-size: 40px;
+    font-family: Arial;
+    align-items: center;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .writing-container_U {
     display: none;
+    position: absolute;
+    top: 285px;
+    left: 101px;
+  }
+  
+  .writing_U {
+    width: 156px;
+    height: 35px;
+    object-fit: contain;
   }
 }
+
 @media (max-width: 800px) {
   body {
     overflow: hidden;
@@ -123,138 +130,125 @@
     background-size: 100vw 100vh;
   }
 
-  .logo-container {
-    position: relative;
-    top: 112.71px;
-    left: 308px;
-  }
-
-  .Agora_logo_light {
-    width: 152.11px;
-    height: 175.62px;
-    object-fit: contain;
-    fill: #1C1C1C;
-  }
-
-  .blurs-container {
+  .Blur_U-container {
     position: fixed;
-    top: -53.12px;
-    left: -883.73px;
+    top: 24px;
+    left: -210.13px;
     overflow: hidden;
   }
 
-  .blurs {
-    width: 1811.73px;
-    height: 1677.36px;
+  .Blur_U {
+    width: 1200px;
+    height: 1577.48px;
     object-fit: contain;
     overflow: hidden;
   }
 
-  .writing-container {
-    display: none;
-    top: 229px;
-    left: 790px;
+  .csv_icon-container {
+    display: flex;
+    position: fixed;
+    top: 441px;
+    left: 249px;
+
   }
 
-  .writing {
-    width: 742px;
-    height: 210px;
-    object-fit: contain;
+  .csv_icon {
+    width: 71px;
+    height: 71px;
+    scale: 1.1;
   }
 
+  .json_icon-container {
+    display: flex;
+    position: fixed;
+    top: 441px;
+    left: 349px;
 
-  .signup-btn {
+  }
+
+  .json_icon {
+    width: 71px;
+    height: 71px;
+    scale: 1.1;
+  }
+
+  .xml_icon-container {
+    display: flex;
+    position: fixed;
+    top: 439px;
+    left: 449px;
+
+  }
+
+  .xml_icon {
+    width: 71px;
+    height: 71px;
+    scale: 1.1;
+  }
+
+  .uplaod_data_btn {
     position: absolute;
-    height: 81px;
-    width: 356.19px;
-    top: 576.37px;
-    left: 206px;
+    height: 99px;
+    width: 374px;
+    top: 0;
+    top: 217px;
+    left: 197px;
+    right: 0;
     cursor: pointer;
-    border: 1px solid #000000;
-    border-radius: 18px;
-    color: #fff;
-    background-color: #000;
-    font-size: 25px;
+    border: 1.5px solid #000000;
+    border-radius: 50px;
+    color: #000000;
+    background-color: #D2CFCC;
+    font-size: 35px;
     font-weight: 700;
-    font-family: 'UT-Sans-TFF', sans-serif;
+    font-family: 'Arial';
+    padding-left: 60px;
   }
 
-
-  .signup-btn:hover {
+  .uplaod_data_btn:hover {
     background-color: #ffffff;
     color: #000000;
   }
-
-  .login-btn {
-    position: absolute;
-    height: 81px;
-    width: 356.19px;
-    top: 673.37px;
-    left: 206px;
-    cursor: pointer;
-    border: 1px solid #000000;
-    border-radius: 18px;
-    color: #fff;
-    background-color: #000;
-    font-size: 25px;
-    font-weight: 700;
-    font-family: 'UT-Sans-TFF', sans-serif;
-  }
-
-
-  .login-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
-  }
-
-  .darkmode-container {
+  
+  .upload_icon-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 800.37px;
-    left: 370px;
+    position: fixed;
+    top: 228px;
+    left: 230px;
+    z-index: 50;
 
   }
 
-  .darkmode {
-    width: 58px;
-    height: 55.83px;
+  .upload_icon {
+    width: 67px;
+    height: 67px;
   }
 
-  .IPad-Site-name{
+  .message1{
     position: absolute;
-    display: flex;
-    top: 300px;
-    left: 250px;
-    font-size: 43px;
-    font-family:'UT-Sans-TFF', sans-serif;
+    top: 353px;
+    left: 125px;
+    font-size: 29px;
+    font-family: Arial;
     align-items: center;
     font-weight: bold;
     color: #000000;
+  }
+    .writing-container_U {
+      display: none;
+      position: absolute;
+      top: 285px;
+      left: 101px;
+    }
+    
+    .writing_U {
+      width: 156px;
+      height: 35px;
+      object-fit: contain;
+    }
+  }
 
-  }
-  .IPad-Motto{
-    position: absolute;
-    display: flex;
-    top: 365px;
-    left: 248.5px;
-    font-size: 25px;
-    font-family:'UT-Sans-TFF', sans-serif;
-    color: #000000;
-    align-items: center;
-  }
-  .IPad-Choice{
-    position: absolute;
-    display: flex;
-    top: 469px;
-    left: 147px;
-    font-size: 32px;
-    font-family:'UT-Sans-TFF', sans-serif;
-    color: #000000;
-    align-items: center;
-  }
-}
+
 @media (max-width: 400px) {
   body {
     overflow: hidden;
@@ -263,135 +257,128 @@
     background-size: 100vw 100vh;
   }
 
-  .logo-container {
-    position: relative;
-    top: 61.59px;
-    left: 113.81px;
-  }
-
-  .Agora_logo_light {
-    width: 75%;
-    height: 200px;
-    object-fit: contain;
-    fill: #1C1C1C;
-  }
-
-  .blurs-container {
+  .Blur_U-container {
     position: fixed;
-    top: -47.46px;
-    left: -1060.73px;
+    top: -32px;
+    left: -507.13px;
     overflow: hidden;
+    z-index: 0;
   }
 
-  .blurs {
-    width: 1811.73px;
-    height: 1677.36px;
+  .Blur_U {
+    width: 1200px;
+    height: 1577.48px;
     object-fit: contain;
     overflow: hidden;
   }
 
-  .writing-container {
+  .csv_icon-container {
+    display: flex;
+    position: absolute;
+    top: 346px;
+    left: 106px;
+    z-index: 1;
+
+  }
+
+  .csv_icon {
+    width: 75px;
+    height: 70px;
+    scale: 65%;
+  }
+
+  .json_icon-container {
+    display: flex;
+    position: absolute;
+    top: 346px;
+    left: 151px;
+    z-index: 1;
+  }
+
+  .json_icon {
+    width: 75px;
+    height: 70px;
+    scale: 65%;
+  }
+
+  .xml_icon-container {
+    display: flex;
+    position: absolute;
+    top: 346px;
+    left: 195px;
+    z-index: 1;
+  }
+
+  .xml_icon {
+    width: 75px;
+    height: 70px;
+    scale: 65%;
+  }
+
+  .uplaod_data_btn {
+    position: absolute;
+    height: 53px;
+    width: 202px;
+    top: 0;
+    top: 206px;
+    left: 79px;
+    right: 0;
+    cursor: pointer;
+    border: 1.5px solid #000000;
+    border-radius: 50px;
+    color: #000000;
+    background-color: #D2CFCC;
+    font-size: 19px;
+    font-weight: 700;
+    font-family: 'Arial';
+    padding-left: 50px;
+  }
+
+  .uplaod_data_btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .upload_icon-container {
+    display: flex;
+    position: absolute;
+    top: 193px;
+    left: 85px;
+    z-index: 50;
+
+  }
+
+  .upload_icon {
+    width: 69px;
+    height: 80px;
+    scale: 65%;
+  }
+
+  .message1{
     display: none;
-    top: 229px;
-    left: 790px;
-  }
-
-  .writing {
-    width: 742px;
-    height: 210px;
-    object-fit: contain;
-  }
-
-
-  .signup-btn {
     position: absolute;
-    height: 44.34px;
-    width: 195px;
-    top: 562.03px;
-    left: 92px;
-    cursor: pointer;
-    border: 1px solid #000000;
-    border-radius: 18px;
-    color: #fff;
-    background-color: #000;
-    font-size: 25px;
-    font-weight: 700;
-    font-family: 'UT-Sans-TFF', sans-serif;
-  }
-
-
-  .signup-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
-  }
-
-  .login-btn {
-    position: absolute;
-    height: 44.34px;
-    width: 195px;
-    top: 625.47px;
-    left: 92px;
-    cursor: pointer;
-    border: 1px solid #000000;
-    border-radius: 18px;
-    color: #fff;
-    background-color: #000;
-    font-size: 25px;
-    font-weight: 700;
-    font-family: 'UT-Sans-TFF', sans-serif;
-  }
-
-
-  .login-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
-  }
-
-  .darkmode-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 15.03px;
-    left: 290.84px;
-
-  }
-
-  .darkmode {
-    width: 75%;
-    height: auto;
-  }
-
-  .IPad-Site-name{
-    position: absolute;
-    display: flex;
-    top: 250px;
-    left: 100px;
-    font-size: 30px;
-    font-family:'UT-Sans-TFF', sans-serif;
+    top: 353px;
+    left: 125px;
+    font-size: 29px;
+    font-family: Arial;
     align-items: center;
     font-weight: bold;
     color: #000000;
+  }
 
+    .writing-container_U {
+      position: absolute;
+      display: block;
+      top: 285px;
+      left: 101px;
+    }
+    
+    .writing_U {
+      width: 156px;
+      height: 35px;
+      object-fit: contain;
+      align-items: center;
+    }
   }
-  .IPad-Motto{
-    position: absolute;
-    display: flex;
-    top: 290.1px;
-    left: 113.5px;
-    font-size: 15px;
-    font-family:'UT-Sans-TFF', sans-serif;
-    color: #000000;
-    align-items: center;
-  }
-  .IPad-Choice{
-    position: absolute;
-    display: flex;
-    top: 517.5px;
-    left: 30px;
-    font-size: 20px;
-    font-family:'UT-Sans-TFF', sans-serif;
-    color: #000000;
-    align-items: center;
-  }
-}
+
+
