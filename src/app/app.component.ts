@@ -1,40 +1,77 @@
-import { Component, HostBinding } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component } from '@angular/core';
+import { HttpClient, HttpEventType } from '@angular/common/http';
+import { Papa } from 'ngx-papaparse';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-
+  csvData: any;
+  xmlData: any;
+  jsonData: any;
+  rows: any[] = [];
+  columns: string[] = [];
   title = 'market-place-fe';
-
-  isDarkMode: boolean = false;
-
-  @HostBinding('class.dark-theme')
-  get darkTheme() {
-    return this.isDarkMode;
-  }
-
-  toggleThemeMode() {
-    this.isDarkMode = !this.isDarkMode;
-  }
-
-  constructor (
-    private matIconRegistry: MatIconRegistry,
-    private sanitizer: DomSanitizer
-  ) {
-    //aici se adauga icon-urile ca de ex:
-    //this.matIconRegistry.addSvgIcon(
-      //'nume',
-      //this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/svg_icons/nume.svg')
-    //)
-  }
-  // add(){
-  //   let num = 20;
-  // }
+  selectedFile: File | null = null;
+  onFileSelected(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    const files: FileList | null = target.files;
+    if (files) {
+      const allowedTypes = ['text/csv', 'text/xml', 'application/json'];
+      const allowedSize = 2000000000;
+      const file = files[0];
+      if (file.size>allowedSize){
+        alert('File size is too large. Maximal size is 2GB');
+        return;
+      }
+      if (allowedTypes.includes(file.type)) {
+        this.selectedFile = file;
+      } else {
+        alert('Supported data types: JSON, CSV, XML');
+      }
+      const reader: FileReader = new FileReader();
   
-}
+      reader.onload = (e: any) => {
+        const fileType = file.type;
+        if (fileType === 'text/csv') {
 
+          const csv: string = e.target.result;
+          console.log(csv);
+          this.parseCsv(csv);
+        } else if (fileType === 'application/json') {
+          const json: string = e.target.result;
+          this.parseJson(json);
+        }
+      };
+      reader.readAsText(file);
+    }
+  }
+  onUpload(): void {
+    if (this.selectedFile) {
+      const fd = new FormData();
+      fd.append('file', this.selectedFile, this.selectedFile.name);
+      console.log(this.selectedFile.name);
+    }
+  }
+
+  parseCsv(csv: string): void {
+    const papa: Papa = new Papa();
+    const parsedCsv = papa.parse(csv);
+    this.columns = parsedCsv.data[0];
+    this.rows = parsedCsv.data.slice(1);
+  }
+
+
+
+  parseJson(json: string): void {
+    const result = JSON.parse(json);
+    const keys = Object.keys(result?.data?.[0] || {});
+    this.columns = keys;
+    this.rows = (result.data || []).map((item: any) => Object.assign({}, item));
+  }  
+
+  constructor(private http: HttpClient) { }
+}
