@@ -53,15 +53,15 @@
 </div>
 
 <div class="rectangle1">
-	<table id = 'table'>
+	<table id = 'tabel'>
   <thead>
     <tr>
-      <th *ngFor="let column of columns">{{column}}</th>
+      <th *ngFor="let column of columns">{{ column }}</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let row of rows">
-      <td *ngFor="let column of columns">{{row[column]}}</td>
+      <td *ngFor="let i of row">{{i}}</td>
     </tr>
   </tbody>
 </table>

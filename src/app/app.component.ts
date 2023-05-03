@@ -69,32 +69,11 @@ export class AppComponent {
   parseCsv(csv: string): void {
     const papa: Papa = new Papa();
     const parsedCsv = papa.parse(csv);
-    this.columns = parsedCsv.data[0];
-    this.rows = parsedCsv.data.slice(1, 11);
-    this.table = document.getElementById("table") as HTMLTableElement;
-    if (this.table) {
-      this.table.innerHTML = "";
-
-      let thead = this.table.createTHead();
-      let tr = thead.insertRow();
-      for (let col of this.columns) {
-        let th = document.createElement("th");
-        let text = document.createTextNode(col);
-        th.appendChild(text);
-        tr.appendChild(th);
-      }
-
-      let tbody = this.table.createTBody();
-      for (let row of this.rows) {
-        let tr = tbody.insertRow();
-        for (let col of row) {
-          let td = tr.insertCell();
-          let text = document.createTextNode(col);
-          td.appendChild(text);
-        }
-      }
-    }
-  }
+    this.columns = parsedCsv.data[0].slice(0, 10);
+    console.log(this.columns);
+    this.rows = parsedCsv.data.slice(1, 11).map((row: any[]) => row.slice(0, 10));
+    console.log(this.rows);
+  }  
 
   parseJson(json: string): void {
     if (!json || json === '') {
@@ -115,29 +94,5 @@ export class AppComponent {
 
     this.columns = fields;
     this.rows = valuesArray.slice(0, 10);
-    
-    this.table = document.getElementById("table") as HTMLTableElement;
-    if (this.table) {
-      this.table.innerHTML = "";
-
-      let thead = this.table.createTHead();
-      let tr = thead.insertRow();
-      for (let col of this.columns) {
-        let th = document.createElement("th");
-        let text = document.createTextNode(col);
-        th.appendChild(text);
-        tr.appendChild(th);
-      }
-
-      let tbody = this.table.createTBody();
-      for (let row of this.rows) {
-        let tr = tbody.insertRow();
-        for (let col of row) {
-          let td = tr.insertCell();
-          let text = document.createTextNode(col);
-          td.appendChild(text);
-        }
-      }
-    }
   }
 } 
