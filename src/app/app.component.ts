@@ -69,9 +69,9 @@ export class AppComponent {
   parseCsv(csv: string): void {
     const papa: Papa = new Papa();
     const parsedCsv = papa.parse(csv);
-    this.columns = parsedCsv.data[0].slice(0, 10);
+    this.columns = parsedCsv.data[0].slice(0, 20);
     console.log(this.columns);
-    this.rows = parsedCsv.data.slice(1, 11).map((row: any[]) => row.slice(0, 10));
+    this.rows = parsedCsv.data.slice(1, 11).map((row: any[]) => row.slice(0, 20));
     console.log(this.rows);
   }  
 
