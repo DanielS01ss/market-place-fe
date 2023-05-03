@@ -16,6 +16,10 @@ export class AppComponent {
   columns: string[] = [];
   title = 'market-place-fe';
   selectedFile: File | null = null;
+  table: HTMLTableElement | null = null;
+
+  constructor(private http: HttpClient) { }
+
   onFileSelected(event: Event): void {
     const target = event.target as HTMLInputElement;
     const files: FileList | null = target.files;
@@ -23,7 +27,7 @@ export class AppComponent {
       const allowedTypes = ['text/csv', 'text/xml', 'application/json'];
       const allowedSize = 2000000000;
       const file = files[0];
-      if (file.size>allowedSize){
+      if (file.size > allowedSize) {
         alert('File size is too large. Maximal size is 2GB');
         return;
       }
@@ -33,22 +37,27 @@ export class AppComponent {
         alert('Supported data types: JSON, CSV, XML');
       }
       const reader: FileReader = new FileReader();
-  
+
       reader.onload = (e: any) => {
         const fileType = file.type;
         if (fileType === 'text/csv') {
-
           const csv: string = e.target.result;
           console.log(csv);
           this.parseCsv(csv);
         } else if (fileType === 'application/json') {
           const json: string = e.target.result;
+          console.log(json);
           this.parseJson(json);
+        } else if (fileType === 'text/xml') {
+          const xml: string = e.target.result;
+          console.log(xml);
+          // this.parseXml(xml);
         }
       };
       reader.readAsText(file);
     }
   }
+
   onUpload(): void {
     if (this.selectedFile) {
       const fd = new FormData();
@@ -61,17 +70,74 @@ export class AppComponent {
     const papa: Papa = new Papa();
     const parsedCsv = papa.parse(csv);
     this.columns = parsedCsv.data[0];
-    this.rows = parsedCsv.data.slice(1);
+    this.rows = parsedCsv.data.slice(1, 11);
+    this.table = document.getElementById("table") as HTMLTableElement;
+    if (this.table) {
+      this.table.innerHTML = "";
+
+      let thead = this.table.createTHead();
+      let tr = thead.insertRow();
+      for (let col of this.columns) {
+        let th = document.createElement("th");
+        let text = document.createTextNode(col);
+        th.appendChild(text);
+        tr.appendChild(th);
+      }
+
+      let tbody = this.table.createTBody();
+      for (let row of this.rows) {
+        let tr = tbody.insertRow();
+        for (let col of row) {
+          let td = tr.insertCell();
+          let text = document.createTextNode(col);
+          td.appendChild(text);
+        }
+      }
+    }
   }
 
-
-
   parseJson(json: string): void {
-    const result = JSON.parse(json);
-    const keys = Object.keys(result?.data?.[0] || {});
-    this.columns = keys;
-    this.rows = (result.data || []).map((item: any) => Object.assign({}, item));
-  }  
+    if (!json || json === '') {
+      console.log('No data to parse')
+      return;
+    }
 
-  constructor(private http: HttpClient) { }
-}
+    const data: any = Object.values(JSON.parse(json))[0];
+    var fields = Object.keys(data[0]).map((elem) => elem.charAt(0).toUpperCase() + elem.slice(1));
+    const valuesArray = [];
+
+    for (let i = 0; i < data.length; i++) {
+      const dict = data[i];
+      const values = Object.values(dict);
+      valuesArray.push(values);
+    }
+    console.log(valuesArray)
+
+    this.columns = fields;
+    this.rows = valuesArray.slice(0, 10);
+    
+    this.table = document.getElementById("table") as HTMLTableElement;
+    if (this.table) {
+      this.table.innerHTML = "";
+
+      let thead = this.table.createTHead();
+      let tr = thead.insertRow();
+      for (let col of this.columns) {
+        let th = document.createElement("th");
+        let text = document.createTextNode(col);
+        th.appendChild(text);
+        tr.appendChild(th);
+      }
+
+      let tbody = this.table.createTBody();
+      for (let row of this.rows) {
+        let tr = tbody.insertRow();
+        for (let col of row) {
+          let td = tr.insertCell();
+          let text = document.createTextNode(col);
+          td.appendChild(text);
+        }
+      }
+    }
+  }
+} 
