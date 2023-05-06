@@ -86,6 +86,6 @@
 <div class='message1'>Supported data types: JSON, CSV, XML</div>
 <div class='message2'>Information data:</div>
 
-<input style="display: none" type="file" (change)="onFileSelected($event)" #fileInput>
+<input style="display: none" type="file" name = "file" (change)="onFileSelected($event)" #fileInput>
 <button class="browse_files_btn" type="button" (click)="fileInput.click()">Browse Files</button>
 <button class="uplaod_data_btn" type="button" (click)="onUpload()">Upload Data</button>

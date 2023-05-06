@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpEventType } from '@angular/common/http';
+import { HttpClient, HttpEventType, HttpHeaders } from '@angular/common/http';
 import { Papa } from 'ngx-papaparse';
 
 @Component({
@@ -9,6 +9,7 @@ import { Papa } from 'ngx-papaparse';
 })
 
 export class AppComponent {
+
   csvData: any;
   xmlData: any;
   jsonData: any;
@@ -23,10 +24,14 @@ export class AppComponent {
   onFileSelected(event: Event): void {
     const target = event.target as HTMLInputElement;
     const files: FileList | null = target.files;
+
     if (files) {
       const allowedTypes = ['text/csv', 'text/xml', 'application/json'];
       const allowedSize = 2000000000;
       const file = files[0];
+      const formData = new FormData();
+      formData.append('file', file, file.name);
+
       if (file.size > allowedSize) {
         alert('File size is too large. Maximal size is 2GB');
         return;
@@ -37,17 +42,29 @@ export class AppComponent {
         alert('Supported data types: JSON, CSV, XML');
       }
       const reader: FileReader = new FileReader();
+      const headers = new HttpHeaders({
+        'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkZWFkZnR3MjAwMUBnbWFpbC5jb20iLCJpYXQiOjE2ODMzMDQ1NzEsImV4cCI6MTY4MzMwNTQ3MX0.uDkqI9Rx1noJxSCP9ms4m3_ZKRwmkScsR_HLkj8MavHuU_SCdLOH197KIo5bEPNUMjaS_TjSJB4o8C6jziZD3w'
+        });
 
       reader.onload = (e: any) => {
         const fileType = file.type;
+        const formData = new FormData();
+        formData.append('file', file);
         if (fileType === 'text/csv') {
           const csv: string = e.target.result;
-          console.log(csv);
-          this.parseCsv(csv);
+          this.http.post('/evaluate_data', formData, {headers: headers}).subscribe((response:any) => {
+            localStorage.setItem('file_tokens', JSON.stringify(response['tokens']))
+            this.columns = response['headers'];
+            this.rows = response['data'];
+          });
+          
         } else if (fileType === 'application/json') {
           const json: string = e.target.result;
-          console.log(json);
-          this.parseJson(json);
+          this.http.post('/evaluate_data', formData, {headers: headers}).subscribe((response:any) => {
+            localStorage.setItem('file_tokens', JSON.stringify(response['tokens']))
+            this.columns = response['headers'];
+            this.rows = response['data'];
+          });
         } else if (fileType === 'text/xml') {
           const xml: string = e.target.result;
           console.log(xml);
@@ -60,9 +77,9 @@ export class AppComponent {
 
   onUpload(): void {
     if (this.selectedFile) {
-      const fd = new FormData();
-      fd.append('file', this.selectedFile, this.selectedFile.name);
-      console.log(this.selectedFile.name);
+      const formData = new FormData();
+      formData.append('file', this.selectedFile);
+
     }
   }
 

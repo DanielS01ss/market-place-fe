@@ -1,0 +1,11 @@
+{
+    "/": {
+      "target": "http://86.120.22.208:8000",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/": ""
+      }
+    }
+  }
